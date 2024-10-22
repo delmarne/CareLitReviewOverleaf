@@ -1,0 +1,132 @@
+% ----------------------------------------------------------------------------
+% thesis.tex:	Master Thesis
+% ----------------------------------------------------------------------------
+% edited by:	Hans Gunar Schirner
+% last update:	see cvs
+% ----------------------------------------------------------------------------
+
+% Options
+% PHD    -- PhD Dissertation (default: MS Thesis)
+% draft  -- label as draft version (default: final)
+\documentclass[PHD]{macro/neu_msthesis}
+
+% --- Global Definitions for title and others ---
+
+% define thesis title 
+\title{Super-Convincing Thesis Title}
+
+% define thesis author 
+\author{Hubert Husky}
+
+% department name 
+\dept{Electrical and Computer Engineering}
+
+% degree name if not "Master of Science" or "Doctor of Philosophy"
+% should not be needed
+%\degree{My Custom Degree Name}
+
+% area of degree (typically the same as \dept{})
+% will be used on degree page: 	
+\degreename{Electrical and Computer Engineering}
+
+% General field in which degree is obtainded (usually same as \degreename{})
+\field{Electrical and Computer Engineering}
+
+% Define month when submitted (START writing early or it will be very soon too late :-) )
+\submitdate{Oct 2013}
+
+% how many committee members (including adviser)
+\numberofmembers{3}
+
+% Define committee member names
+\principaladviser{Principle Adviser Name}
+\firstreader{First Reader Name}
+\secondreader{Second Reader Name}
+
+\thirdreader{Third Reader Name}
+\fourthreader{Fourth Reader Name}
+\fifthreader{Fifth Reader Name}
+
+% name chair of department
+\chairman{Dr. Shelia Hemami}
+
+% name of director graduate school
+\dean{Dr. Sara Wadia-Fascetti}
+
+% all user defined macros 
+% outsourced conveniently to keep this file clean
+\input{macro/macro}
+
+
+% --- begin of document ---
+\begin{document}
+
+% add a pdf bookmark to the cover page
+\pdfbookmark[1]{Cover}{cover}
+
+% --- title page ---
+\titlepage
+
+% --- front matter ---
+\begin{frontmatter}
+% print signature page
+\signaturepage
+% dedication
+\input{tex/dedication.tex}
+
+% table of content (add bookmark for convenience)
+\pdfbookmark[1]{Table of Contents}{contents}
+\tableofcontents
+\listoffigures
+\newpage\ssp
+\listoftables
+
+% include a list of Acronyms (comment out if no acronyms are specified)
+\input{tex/acronyms.tex}
+
+% include any of the front matter files that contain text
+% attention the input does cause a page break, the include on 
+% the other hand does not
+\input{tex/acknowledgements.tex}
+\input{tex/abstract.tex}
+
+\end{frontmatter}
+
+
+% --- body of the document ---
+
+%\pagestyle{plain}
+\pagestyle{headings}
+
+% include each chapter like below
+\input{tex/intro.tex}
+
+% background
+%\input{tex/background.tex}
+
+% conclusion
+\input{tex/conclusion.tex}
+
+
+% --- Bibliography ----
+\bibliographystyle{plain}
+
+% include bibliography definition
+\bibliography{bib/thesis}
+
+
+% --- Appendix ---
+\appendix
+%include anything you need in the appendix
+%\include{appendix/appendix}
+
+
+% --- Index ----
+\printindex
+
+
+% --- that's it ---
+\end{document}
+
+% --- EOF --------------------------------------------------------------------
+
